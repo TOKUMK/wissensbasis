@@ -1,0 +1,39 @@
+Purpose: 
+
+to share 3rd party content at a single source.
+
+
+
+Use Case:
+
+User can view 3rd party links, and submit new links for additional content.
+
+
+
+Mockup:
+
+Urls are presented to the user in a list format.
+A user can add new urls to content by clicking 'add new content'. This will present the user with an input field, which url can be pasted and submitted via a submit button.
+
+
+
+proposed architecture style and technology stack:
+
+v0.1: 
+backend: nodejs and express
+persistence: mongodb / postgres
+front end: html, css, react / angular / vue. 
+
+
+
+futher revisions: 
+
+possible addition of comments section for each url to generate discussion.
+( ? nested comments such as reddit). 
+This would possible require some kind of user identity and at this juncture could be considered user authentication and authorisation features.
+
+
+
+
+
+
