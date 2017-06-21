@@ -1,42 +1,45 @@
 const express 	= require('express');
 const router 	= express.Router();
 const mongoose 	= require('mongoose');
-const Upload	= require('../model/Upload.model.js')
 
-// connect to db, must have mongoDB running with a db called 'test'
-// note: you can add any name for the db and its auto generated once you insert a document into collection.
-mongoose.connect('mongodb://localhost/test');
-
-// will be moved to models file
-// model schema
-var testSchema = mongoose.Schema({
-    name: String
-});
-
-// model
-var Guy = mongoose.model('Guy', testSchema);
+// import models
+// note: .js not required at the end of the path
+const Upload	= require('../models/Upload.model')
 
 
-// home route
+// index route
 router.get('/', function(req, res, next){
-
-    // create new guy
-    var guy = new Guy({name: 'Jonathan'});
-    // save new guy
-    guy.save(function (err, guy) {
+    // get uploads and pass to view
+    Upload.find(function (err, uploads) {
         if (err) return console.error(err);
-        console.log(guy)
-    })
-    // get and return guys
-    Guy.find(function (err, guys) {
-        if (err) return console.error(err);
-        res.render('index.html', {data: guys});
+        console.log(uploads)
+        res.render('index.html', {data: uploads});
     })
 });
-
 
 router.post('/', function(req, res, next){
 	//todo: persist url, add timestamp, and uploaded_by 
+
+    // example creation code
+    // var upload = new Upload({
+    //     title: 'Test Article',
+    //     description: 'Description for test article',
+    //     content: 'This is the content of the article',
+    //     tags: 'javascript,frontend',
+    //     type: 'article',
+    //     url: 'http://localhost:3000',
+    //     uploadBy: 'Jonathan',
+    //     uploadDate: '21-06-2017 16:43:21',
+    //     originalAuthor: 'Joe Blogs',
+    //     originalCreationDate: '18-06-2017 16:43:21',
+    // });
+    // // save new upload
+    // upload.save(function (err, upload) {
+    //     if (err) return console.error(err);
+    //     console.log(upload)
+    //     // return something if you want
+    //     // return guy
+    // })
 
 });
 

@@ -1,6 +1,21 @@
 const express = require('express')
 const path = require('path');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+// database
+mongoose.connect('mongodb://localhost/wissensbasis');
+let db = mongoose.connection;
+
+// Check connection
+db.once('open', function(){
+  console.log('connected to MongoDB');
+});
+
+// Check for DB errors
+db.on('error', function(err){
+  console.log(err);
+});
 
 // import routes
 const index = require('./routes/index');
