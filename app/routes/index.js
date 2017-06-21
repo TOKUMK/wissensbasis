@@ -12,8 +12,7 @@ router.get('/', function(req, res, next){
     // get uploads and pass to view
     Upload.find(function (err, uploads) {
         if (err) return console.error(err);
-        console.log(uploads)
-        res.render('index.html', {data: uploads});
+        res.render('index.html', {uploads: uploads});
     })
 });
 
@@ -36,7 +35,7 @@ router.post('/', function(req, res, next){
     // // save new upload
     // upload.save(function (err, upload) {
     //     if (err) return console.error(err);
-    //     console.log(upload)
+    //     console.log('upload successfully saved')
     //     // return something if you want
     //     // return guy
     // })

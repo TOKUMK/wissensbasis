@@ -55,10 +55,12 @@
 
       <!--blog items-->
       <div>
-         <% for (i in data) { %>
+         <% for (index in uploads) { %>
             <div>
-              <%= data[0] %>
-            </div><br>
+              <h3><%= uploads[index]['title'] %></h3>
+              <p><%= uploads[index]['description'] %></p>
+            </div>
+            <br>
         <% } %>
       </div>
 
