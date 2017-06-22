@@ -1,0 +1,21 @@
+{
+  "name": "wissensbasis",
+  "description": "A web application to 3rd party content related to computer science and software development",
+  "main": "app.js",
+  "authors": [
+    "J&J"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/TOKUMK/wissensbasis",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
