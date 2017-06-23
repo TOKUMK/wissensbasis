@@ -3,7 +3,6 @@ const router 	= express.Router();
 const mongoose 	= require('mongoose');
 
 // import models
-// note: .js not required at the end of the path
 const Upload	= require('../models/Upload.model')
 
 
