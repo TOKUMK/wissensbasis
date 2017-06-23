@@ -15,6 +15,11 @@ router.get('/', function(req, res, next){
     })
 });
 
+router.get('/upload', function (req, res, next){
+    // render upload form
+    res.render('upload.html')
+});
+
 router.post('/', function(req, res, next){
 	//todo: persist url, add timestamp, and uploaded_by 
 

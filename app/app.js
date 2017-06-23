@@ -19,6 +19,7 @@ db.on('error', function(err){
 
 // import routes
 const index = require('./routes/index');
+const login = require('./routes/login');
 
 // initialize app
 const app = express()
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // set routes
 app.use('/', index)
+app.use('/login', login)
 
 // start app
 app.listen(3000, function () {
