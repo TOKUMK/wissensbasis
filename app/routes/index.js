@@ -20,7 +20,7 @@ router.get('/upload', function (req, res, next){
     res.render('upload.html')
 });
 
-router.post('/', function(req, res, next){
+router.post('/test', function(req, res, next){
 	//todo: persist url, add timestamp, and uploaded_by 
 
     // example creation code
