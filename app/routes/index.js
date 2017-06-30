@@ -34,7 +34,7 @@ router.get('/upload', function (req, res, next){
 });
 
 router.post('/test', function(req, res, next){
-}
+});
 
 
 router.post('/upload', function (req, res, next){
